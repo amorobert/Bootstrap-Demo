@@ -1,0 +1,14 @@
+<% if @posts %>
+  <% @posts.each do |post| %>
+      <ul>
+            <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+      </ul>
+  <% end %>
+<% else %>
+  <h1>No posts to display</h1>
+<% end %>
+<% if logged_in? %>
+  <form class="" action="/posts/new" method="get">
+    <button type="submit">Create New Post</button>
+  </form>
+<% end %>

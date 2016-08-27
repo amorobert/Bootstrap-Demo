@@ -1,0 +1,7 @@
+<%= erb :_errors, :layout => false, locals: {errors: @errors} if @errors %>
+
+<form name="sign_up" action="/login" method="post">
+  <input type="text" placeholder="Email" name="email"><br><br>
+  <input type="password" placeholder="Password" name="password"><br><br>
+  <button type="submit">Sign In</button>
+</form>

@@ -1,0 +1,22 @@
+<%= erb :_errors, :layout => false, locals: {errors: @errors} if @errors %>
+
+<form action='/posts' method='post'>
+
+  <label> Title:
+  <input placeholder="Title" type="text" name="post[title]"><br><br>
+  </label>
+
+  <!-- <label> Condition:
+    <select name="auction[condition]">
+        <option value="New">New</option>
+        <option value="Like New">Like New</option>
+        <option value="Fair">Fair</option>
+        <option value="Poor">Poor</option>
+    </select>
+  </label><br><br> -->
+
+  <!-- <label> Description:
+    <textarea name="auction[description]" rows="8" cols="40" placeholder="Describe Your Item Here"></textarea><br><br>
+  </label> -->
+  <button type="submit" class="button">Create Post</button>
+</form>

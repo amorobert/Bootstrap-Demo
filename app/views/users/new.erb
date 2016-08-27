@@ -1,0 +1,9 @@
+<%= erb :_errors, :layout => false, locals: {errors: @errors} if @errors %>
+
+<form action='/users' method='post'>
+  <input placeholder="Name" type="text" name="user[name]"><br><br>
+  <input placeholder="Email" type="text" name="user[email]"><br><br>
+  <input placeholder="Password" type="password" name="user[password]"><br><br>
+    <input placeholder="Confirm Password" type="password" name="confirmation"><br><br>
+  <button type="submit">Register</button>
+</form>

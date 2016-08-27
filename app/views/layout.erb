@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <ul id="navbar">
+     <li><h1>WRITE TITLE HERE</h1></li>
+      <li><a href="/">Home</a></li>
+     <% if logged_in? %>
+       <li><a href="/users/<%= current_user_id %>"><%= current_user.name.capitalize %></a></li>
+       <li><form action="/logout" method="post">
+        <button type="submit" name="Submit" >Logout</button>
+       </form></li>
+     <% else %>
+       <li><a href="/login">Log In</a></li>
+       <li><a href="/users/new">Register</a></li>
+     <% end %>
+   </ul>
+  <%= yield %>
+</body>
+</html>
